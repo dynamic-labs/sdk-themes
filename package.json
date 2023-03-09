@@ -1,0 +1,42 @@
+{
+  "name": "sdk-themes",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@dynamic-labs/sdk-react": "^0.15.0",
+    "sass": "^1.58.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "./scripts/start.sh",
+    "start:cra": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "up": "./scripts/up.sh",
+    "🚀": "./scripts/up.sh",
+    "build:css": "sass scss/:public/css/ --no-source-map ; sass scss/:css/ --no-source-map --style=compressed",
+    "watch:css-public": "sass -w scss/:public/css/ --no-source-map;",
+    "watch:css": "sass -w scss/:css/ --no-source-map --style=compressed"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
