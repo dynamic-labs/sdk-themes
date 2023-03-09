@@ -1,94 +1,100 @@
 @mixin dark-theme-variables {
   @media (prefers-color-scheme: dark) {
-    :root [data-dynamic-theme='auto'] {
+    :root [data-dynamic-theme="auto"] {
       @content;
     }
   }
-​
-  :root [data-dynamic-theme='dark'] {
+
+  :root [data-dynamic-theme="dark"] {
     @content;
   }
 }
-​
+
 @mixin light-theme-variables {
   :root {
     /* Fallback for browsers that don't support prefers-color-scheme */
     @content;
   }
-​
+
   @media (prefers-color-scheme: light) {
-    :root [data-dynamic-theme='auto'] {
+    :root [data-dynamic-theme="auto"] {
       @content;
     }
   }
-​
-  :root [data-dynamic-theme='light'] {
+
+  :root [data-dynamic-theme="light"] {
     @content;
   }
 }
-​
+
 @mixin bold-brand {
-  & [data-dynamic-theme-brand='bold'],
-  &[data-dynamic-theme-brand='bold'] {
+  & [data-dynamic-theme-brand="bold"],
+  &[data-dynamic-theme-brand="bold"] {
     // has both with and without space to target root and non root elements
     @content;
   }
 }
-​
+
 @mixin subtle-brand {
-  & [data-dynamic-theme-brand='subtle'],
-  &[data-dynamic-theme-brand='subtle'] {
+  & [data-dynamic-theme-brand="subtle"],
+  &[data-dynamic-theme-brand="subtle"] {
     // has both with and without space to target root and non root elements
     @content;
   }
 }
-​
+
 $SHADOW_DOWN_1: 0px 1px 2px rgba(24, 39, 75, 0.04);
-$SHADOW_DOWN_2: 0px 12px 20px -6px rgba(24, 39, 75, 0.02), 0px 16px 26px -4px rgba(24, 39, 75, 0.04);
+$SHADOW_DOWN_2: 0px 12px 20px -6px rgba(24, 39, 75, 0.02),
+  0px 16px 26px -4px rgba(24, 39, 75, 0.04);
 $SHADOW_DOWN_3: 0px 24px 32px -24px rgba(0, 0, 0, 0.24);
-​
+
 $SHADOW_UP_1: 0px -8px 48px -8px rgba(109, 121, 165, 0.16);
-​
-$BRAND_HOVER_COLOR: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), #4779FF;
-$BRAND_PRIMARY_COLOR: #4779FF;
+
+$BRAND_HOVER_COLOR: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.08),
+    rgba(0, 0, 0, 0.08)
+  ),
+  #4779ff;
+$BRAND_PRIMARY_COLOR: #4779ff;
 $BRAND_SECONDARY_COLOR: rgba(71, 121, 255, 0.15);
-​
+
 $BORDER_RADIUS: 24px;
-​
+
 $TITLE: 18px;
-​
+
 $BODY_NORMAL: 15px;
 $BODY_SMALL: 12px;
 $BODY_MINI: 11px;
-​
+
 $BUTTON_PRIMARY: 14px;
 $BUTTON_SECONDARY: 12px;
-​
+
 $NUMBERS_BIG: 14px;
 $NUMBERS_MEDIUM: 12px;
 $NUMBERS_SMALL: 10px;
-​
+
 @layer light-theme-default {
   // light theme is first, so it can be the default
   $BASE_1: #f7f7f9;
   $BASE_2: #fff;
   $BASE_3: rgba(22, 37, 77, 0.05);
   $BASE_4: rgba(22, 37, 77, 0.12);
-  $BASE_5: linear-gradient(180deg, #FFFFFF 0%, #F7F7F9 100%);
-​
-  $TEXT_PRIMARY: #383C48;
+  $BASE_5: linear-gradient(180deg, #ffffff 0%, #f7f7f9 100%);
+
+  $TEXT_PRIMARY: #383c48;
   $TEXT_SECONDARY: rgba($TEXT_PRIMARY, 65%);
   $TEXT_TERTIARY: rgba($TEXT_PRIMARY, 40%);
-  $TEXT_LINK: #0047FF;
-​
+  $TEXT_LINK: #0047ff;
+
   $CONNECTION_GREEN: #41cc99;
-​
-  $ERROR_1: #FF4646;
+
+  $ERROR_1: #ff4646;
   $ERROR_2: rgb(255 70 70 / 10%);
-​
+
   $OVERLAY: rgba(24, 27, 34, 0.15);
   $HOVER: rgba(22, 37, 77, 0.03);
-​
+
   $LOADING_ANIMATION_GRADIENT: linear-gradient(
     90deg,
     rgb(255 255 255 / 0%) 0,
@@ -96,10 +102,10 @@ $NUMBERS_SMALL: 10px;
     rgb(255 255 255 / 50%) 60%,
     rgb(255 255 255 / 0%)
   );
-​
+
   @include light-theme-variables {
-    --dynamic-font-family-primary: 'DM Sans', sans-serif;
-    --dynamic-font-family-numbers: 'Roboto Mono', monospace, sans-serif;
+    --dynamic-font-family-primary: "DM Sans", sans-serif;
+    --dynamic-font-family-numbers: "Roboto Mono", monospace, sans-serif;
     --dynamic-base-1: #{$BASE_1};
     --dynamic-base-2: #{$BASE_2};
     --dynamic-base-3: #{$BASE_3};
@@ -175,28 +181,28 @@ $NUMBERS_SMALL: 10px;
     }
   }
 }
-​
+
 @layer dark-theme-default {
-  $BASE_1: #14161C;
-  $BASE_2: #27282E;
+  $BASE_1: #14161c;
+  $BASE_2: #27282e;
   $BASE_3: rgba(231, 234, 243, 0.08);
   $BASE_4: rgba(231, 234, 243, 0.15);
-  $BASE_5: linear-gradient(180deg, #24272F 0%, #14161C 100%);
-​
+  $BASE_5: linear-gradient(180deg, #24272f 0%, #14161c 100%);
+
   $TEXT_BASE: #f5f8ff;
   $TEXT_PRIMARY: rgba($TEXT_BASE, 95%);
   $TEXT_SECONDARY: rgb($TEXT_BASE, 55%);
   $TEXT_TERTIARY: rgb($TEXT_BASE, 40%);
-  $TEXT_LINK: #69A5FF;
-​
-  $CONNECTION_GREEN: #46FFBC;
-​
-  $ERROR_1: #FF6A6A;
+  $TEXT_LINK: #69a5ff;
+
+  $CONNECTION_GREEN: #46ffbc;
+
+  $ERROR_1: #ff6a6a;
   $ERROR_2: rgb(255 106 106 / 20%);
-​
+
   $OVERLAY: rgba(0, 0, 0, 0.25);
   $HOVER: rgba(255, 255, 255, 0.1);
-​
+
   $LOADING_ANIMATION_GRADIENT: linear-gradient(
     90deg,
     rgb(255 255 255 / 0%) 0,
@@ -204,10 +210,10 @@ $NUMBERS_SMALL: 10px;
     rgb(255 255 255 / 5%) 60%,
     rgb(255 255 255 / 0%)
   );
-​
+
   @include dark-theme-variables {
-    --dynamic-font-family-primary: 'DM Sans', sans-serif;
-    --dynamic-font-family-numbers: 'Roboto Mono', monospace, sans-serif;
+    --dynamic-font-family-primary: "DM Sans", sans-serif;
+    --dynamic-font-family-numbers: "Roboto Mono", monospace, sans-serif;
     --dynamic-base-1: #{$BASE_1};
     --dynamic-base-2: #{$BASE_2};
     --dynamic-base-3: #{$BASE_3};
@@ -270,7 +276,7 @@ $NUMBERS_SMALL: 10px;
     --dynamic-connect-button-color: #{$TEXT_PRIMARY};
     --dynamic-connect-button-border: 1px solid #{$BASE_4};
     --dynamic-connect-button-shadow: #{$SHADOW_DOWN_1};
-    --dynamic-connect-button-background-hover: #24272E;
+    --dynamic-connect-button-background-hover: #24272e;
     --dynamic-connect-button-color-hover: #{$TEXT_PRIMARY};
     --dynamic-connect-button-border-hover: 1px solid #{$BASE_4};
     --dynamic-connect-button-shadow-hover: #{$SHADOW_DOWN_2};
