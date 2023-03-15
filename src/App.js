@@ -6,7 +6,10 @@ function App() {
     (theme) => theme.split(".")[0]
   );
 
-  const [theme, setTheme] = useState(`/css/${dropdownValues[0]}.css`);
+  const versionValues = process.env.REACT_APP_THEME_VERSIONS.split(",");
+
+  const [version, setVersion] = useState("");
+  const [theme, setTheme] = useState(dropdownValues[0]);
 
   const makeOption = (value) => (
     <option value={value}>{value.replace("-", " ")}</option>
@@ -14,8 +17,12 @@ function App() {
 
   return (
     <div className="App">
-      <link rel="stylesheet" href={theme} />
-      <select onChange={(e) => setTheme(`/css/${e.target.value}.css`)}>
+      <link rel="stylesheet" href={`/css/${version}${theme}.css`} />
+      <select onChange={(e) => setVersion(e.target.value)}>
+        <option value="">unversioned</option>
+        {versionValues.map(makeOption)}
+      </select>
+      <select onChange={(e) => setTheme(e.target.value)}>
         {dropdownValues.map(makeOption)}
       </select>
       <br />
