@@ -1,5 +1,5 @@
 {
-  "name": "sdk-themes",
+  "name": "@dynamic-labs/sdk-themes",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
