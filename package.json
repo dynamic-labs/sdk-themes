@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@dynamic-labs/sdk-react": "^0.15.0",
+    "@dynamic-labs/sdk-react-core": "^1.0.2",
+    "@dynamic-labs/ethereum": "^1.0.2",
     "sass": "^1.58.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
+  },
+  "overrides": {
+    "typescript": "^5.3.3"
   },
   "scripts": {
     "start": "./scripts/start.sh",
@@ -15,8 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "up": "./scripts/up.sh",
-    "🚀": "./scripts/up.sh",
+    "up": "GENERATE_SOURCEMAP=false ./scripts/up.sh",
     "build:css": "sass scss/:public/css/ --no-source-map ; sass scss/:css/ --no-source-map --style=compressed",
     "watch:css-public": "sass -w scss/:public/css/ --no-source-map;",
     "watch:css": "sass -w scss/:css/ --no-source-map --style=compressed"

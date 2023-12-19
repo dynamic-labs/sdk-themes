@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { DynamicContextProvider, DynamicWidget } from "@dynamic-labs/sdk-react";
+import { DynamicContextProvider, DynamicWidget } from "@dynamic-labs/sdk-react-core";
+import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
 
 function App() {
   const dropdownValues = process.env.REACT_APP_THEMES.split(",").map(
@@ -22,9 +23,9 @@ function App() {
       <br />
       <DynamicContextProvider
         settings={{
-          environmentId: "2731d0a2-d567-424c-b9ac-8ca95b4be452",
+          environmentId: "793f471f-b1a3-43d1-8cbf-d0aa5a0a3fc0",
+          walletConnectors: [EthereumWalletConnectors],
           toolkitEnabled: true,
-          multiWalletEnabled: true,
         }}
       >
         <DynamicWidget />

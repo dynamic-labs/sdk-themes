@@ -1,10 +1,10 @@
 # sdk-themes
 
-A place to store the themes used by the sdk served by redcoast
+A small repo to try and showcase Dynamic themes
 
-## How to start the theme preview application
+## How to start the theme preview applicationno
 
-1. run `npm run 🚀` in your terminal
+1. run `npm run start` in your terminal
 2. edit the themes in scss folder
 3. see the changes in the browser
 
